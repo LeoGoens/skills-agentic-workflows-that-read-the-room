@@ -42,6 +42,17 @@ Use `web-fetch` for these public sources:
 
 Do not use shell commands (python, curl, etc.) to fetch web content.
 
+Do the work yourself. Do not delegate to sub-agents or the `task` tool.
+
+Publish with these steps, running each git command as its own separate shell call
+(never chain with `&&`, `;` or pipes, and never edit files under `.git/`):
+1. `git checkout -b update-github-info-<YYYY-MM-DD>` (never commit on `main`).
+2. Edit `site/content/github-info.md`.
+3. `git add site/content/github-info.md`
+4. `git commit -m "docs: update Mona's GitHub Info page"`
+5. Call `create_pull_request` with `branch` set to the branch from step 1 and
+   `base` set to `main`. Do not delegate any step to sub-agents or the `task` tool.
+
 Update `site/content/github-info.md` with concise,
 practical updates for readers and include source context when content comes
 from the GitHub Blog or GitHub Changelog.
