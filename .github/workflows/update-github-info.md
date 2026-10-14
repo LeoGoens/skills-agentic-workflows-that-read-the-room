@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
-model: gpt-5-mini
+model: gpt-5.4
 tools:
   github:
     toolsets: [repos]
@@ -33,6 +33,12 @@ Read `notes/mona-notes.md` using the GitHub repository API. Use the web-fetch
 tool to fetch https://github.blog/latest/, https://github.blog/changelog/, and
 https://awesome-copilot.github.com/workflows/. Compare relevant information
 from these sources with `site/content/github-info.md`.
+
+Before doing anything else, confirm the web-fetch tool is available and that at
+least one source page was actually retrieved. If it is not, or every fetch
+fails, call `missing_tool` with `tool` set to `web-fetch` and a reason that
+names the failing URLs and the error, and stop. Never use `noop` for this case;
+`noop` is only for sources that were fetched and had nothing new.
 
 Update only that page with concise, practical guidance that helps developers
 learn GitHub faster. Preserve useful existing content, include source links for
