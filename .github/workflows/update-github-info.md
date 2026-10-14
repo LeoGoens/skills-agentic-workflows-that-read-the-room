@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
-model: gpt-5.4
+model: gpt-5-mini
 tools:
   github:
     toolsets: [repos]
