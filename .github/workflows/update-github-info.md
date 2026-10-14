@@ -42,6 +42,8 @@ Use `web-fetch` for these public sources:
 
 Do not use shell commands (python, curl, etc.) to fetch web content.
 
+Do the work yourself. Do not delegate to sub-agents or the `task` tool.
+
 Update `site/content/github-info.md` with concise,
 practical updates for readers and include source context when content comes
 from the GitHub Blog or GitHub Changelog.
