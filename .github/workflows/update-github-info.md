@@ -7,6 +7,9 @@ on:
 permissions:
   contents: read
 model: gpt-5-mini
+engine:
+  id: copilot
+  copilot-sdk: true
 tools:
   github:
     toolsets: [repos]
@@ -29,16 +32,15 @@ safe-outputs:
 
 # Update Mona's GitHub Info website
 
-Read `notes/mona-notes.md` before making changes.
+Read `notes/mona-notes.md` with the GitHub repository `get_file_contents` tool
+before making changes.
 
-Use these sources:
-- `notes/mona-notes.md`
+Use `web-fetch` for these public sources:
 - GitHub Blog: https://github.blog/latest/
 - GitHub Changelog: https://github.blog/changelog/
 - Awesome Copilot: https://awesome-copilot.github.com/workflows/
 
-Fetch the sources above only with the `web-fetch` tool. Shell commands
-(python, curl, etc.) are not available and will be denied.
+Do not use shell commands (python, curl, etc.) to fetch web content.
 
 Update `site/content/github-info.md` with concise,
 practical updates for readers and include source context when content comes
