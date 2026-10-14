@@ -15,7 +15,7 @@ tools:
     toolsets: [repos]
   edit:
   web-fetch:
-  bash: false
+  bash: ["cat"]
   cli-proxy: false
 network:
   allowed:
