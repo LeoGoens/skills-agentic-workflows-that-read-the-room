@@ -37,6 +37,9 @@ Use these sources:
 - GitHub Changelog: https://github.blog/changelog/
 - Awesome Copilot: https://awesome-copilot.github.com/workflows/
 
+Fetch the sources above only with the `web-fetch` tool. Shell commands
+(python, curl, etc.) are not available and will be denied.
+
 Update `site/content/github-info.md` with concise,
 practical updates for readers and include source context when content comes
 from the GitHub Blog or GitHub Changelog.
