@@ -38,7 +38,9 @@ Update only that page with concise, practical guidance that helps developers
 learn GitHub faster. Preserve useful existing content, include source links for
 any information drawn from the GitHub Blog, Changelog, or Awesome Copilot
 workflows, and do not add claims that the fetched sources do not support. Use
-the edit tool to make the change.
+the edit tool to make the change. Do all of the work yourself; do not delegate to
+sub-agents or the task tool, because mixing models in one session breaks tool
+call history.
 
 When there is a worthwhile update, open one pull request for Mona to review.
 Describe the update and cite its sources in the pull request body. Use the
