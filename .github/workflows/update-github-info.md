@@ -44,10 +44,14 @@ Do not use shell commands (python, curl, etc.) to fetch web content.
 
 Do the work yourself. Do not delegate to sub-agents or the `task` tool.
 
-Before editing any file, create a new feature branch with a single simple command
-(`git checkout -b update-github-info-<YYYY-MM-DD>`); never edit or commit on `main`.
-Run git commands one at a time (no `&&` chains). After editing, run `git add` and
-`git commit`, then call `create_pull_request` with that feature branch.
+Publish with these steps, running each git command as its own separate shell call
+(never chain with `&&`, `;` or pipes, and never edit files under `.git/`):
+1. `git checkout -b update-github-info-<YYYY-MM-DD>` (never commit on `main`).
+2. Edit `site/content/github-info.md`.
+3. `git add site/content/github-info.md`
+4. `git commit -m "docs: update Mona's GitHub Info page"`
+5. Call `create_pull_request` with `branch` set to the branch from step 1 and
+   `base` set to `main`. Do not delegate any step to sub-agents or the `task` tool.
 
 Update `site/content/github-info.md` with concise,
 practical updates for readers and include source context when content comes
