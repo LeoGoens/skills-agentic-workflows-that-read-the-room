@@ -10,8 +10,8 @@ model: gpt-5-mini
 tools:
   github:
     toolsets: [repos]
-  edit: true
-  web-fetch: {}
+  edit:
+  web-fetch:
   bash: false
   cli-proxy: false
 network:
