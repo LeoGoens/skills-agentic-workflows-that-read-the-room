@@ -27,29 +27,21 @@ safe-outputs:
     max: 1
 ---
 
-# Update GitHub Info
+# Update Mona's GitHub Info website
 
-Read `notes/mona-notes.md` using the GitHub repository API. Use the web-fetch
-tool to fetch https://github.blog/latest/, https://github.blog/changelog/, and
-https://awesome-copilot.github.com/workflows/. Compare relevant information
-from these sources with `site/content/github-info.md`.
+Read `notes/mona-notes.md` before making changes.
 
-Before doing anything else, confirm the web-fetch tool is available and that at
-least one source page was actually retrieved. If it is not, or every fetch
-fails, call `missing_tool` with `tool` set to `web-fetch` and a reason that
-names the failing URLs and the error, and stop. Never use `noop` for this case;
-`noop` is only for sources that were fetched and had nothing new.
+Use these sources:
+- `notes/mona-notes.md`
+- GitHub Blog: https://github.blog/latest/
+- GitHub Changelog: https://github.blog/changelog/
+- Awesome Copilot: https://awesome-copilot.github.com/workflows/
 
-Update only that page with concise, practical guidance that helps developers
-learn GitHub faster. Preserve useful existing content, include source links for
-any information drawn from the GitHub Blog, Changelog, or Awesome Copilot
-workflows, and do not add claims that the fetched sources do not support. Use
-the edit tool to make the change. Do all of the work yourself; do not delegate to
-sub-agents or the task tool, because mixing models in one session breaks tool
-call history.
+Update `site/content/github-info.md` with concise,
+practical updates for readers and include source context when content comes
+from the GitHub Blog or GitHub Changelog.
 
-When there is a worthwhile update, open one pull request for Mona to review.
-Describe the update and cite its sources in the pull request body. Use the
-configured `create-pull-request` safe output; do not push directly to `main` or
-write any other file. If the sources contain no useful new information, leave
-the page unchanged and call `noop` with a brief reason.
+Open a pull request for Mona to review. 
+Use a pull request title that mentions Mona or GitHub Info. 
+Do not write directly to `main`;
+rely on `safe-outputs` with `create-pull-request`.
