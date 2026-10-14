@@ -19,9 +19,10 @@ tools:
   cli-proxy: false
 network:
   allowed:
-    - github.blog
-    - github.com
-    - awesome-copilot.github.com
+    - defaults
+    - "awesomecopilot.github.com"
+    - "github.blog"
+    - "github.com"
 safe-outputs:
   create-pull-request:
     allowed-files:
