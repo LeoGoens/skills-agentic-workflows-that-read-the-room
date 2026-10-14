@@ -1,6 +1,6 @@
 ---
 name: update-github-info
-description: Keep Mona's GitHub Info page current with practical, sourced updates from GitHub Blog and Changelog.
+description: Keep Mona's GitHub Info page current with practical, sourced updates from GitHub Blog, Changelog, and Awesome Copilot workflows.
 on:
   schedule: daily
   workflow_dispatch:
@@ -17,6 +17,7 @@ network:
   allowed:
     - github.blog
     - github.com
+    - awesome-copilot.github.com
 safe-outputs:
   create-pull-request:
     allowed-files:
@@ -27,14 +28,16 @@ safe-outputs:
 
 # Update GitHub Info
 
-Read `notes/mona-notes.md` using the GitHub repository API. Fetch both
-https://github.blog/latest/ and https://github.blog/changelog/ with the web-fetch
-tool. Compare relevant new information with `site/content/github-info.md`.
+Read `notes/mona-notes.md` using the GitHub repository API. Use the web-fetch
+tool to fetch https://github.blog/latest/, https://github.blog/changelog/, and
+https://awesome-copilot.github.com/workflows/. Compare relevant information
+from these sources with `site/content/github-info.md`.
 
 Update only that page with concise, practical guidance that helps developers
 learn GitHub faster. Preserve useful existing content, include source links for
-any information drawn from the GitHub Blog or Changelog, and do not add claims
-that the fetched sources do not support. Use the edit tool to make the change.
+any information drawn from the GitHub Blog, Changelog, or Awesome Copilot
+workflows, and do not add claims that the fetched sources do not support. Use
+the edit tool to make the change.
 
 When there is a worthwhile update, open one pull request for Mona to review.
 Describe the update and cite its sources in the pull request body. Use the
