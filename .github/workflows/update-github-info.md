@@ -44,6 +44,11 @@ Do not use shell commands (python, curl, etc.) to fetch web content.
 
 Do the work yourself. Do not delegate to sub-agents or the `task` tool.
 
+Before editing any file, create a new feature branch with a single simple command
+(`git checkout -b update-github-info-<YYYY-MM-DD>`); never edit or commit on `main`.
+Run git commands one at a time (no `&&` chains). After editing, run `git add` and
+`git commit`, then call `create_pull_request` with that feature branch.
+
 Update `site/content/github-info.md` with concise,
 practical updates for readers and include source context when content comes
 from the GitHub Blog or GitHub Changelog.
